@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+body{
+    background:lightyellow;
+    }
+
+    h3{
+    color:white;
+
+    }
+
+     div.part1{
+    background:lightseagreen;
+    border: 10px solid #ccc
+    margin-top:70px;
+    padding:70px;
+    margin:90px;
+    border-radius:10px;
+    }
+
+     div.part2{
+    background:lightseagreen;
+    border: 10px solid #ccc
+    margin-top:70px;
+    padding:70px;
+    margin:90px;
+    border-radius:10px;
+    }
+
+    button.btn{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+</style>
+<body>
+<div class="part1">
+<form action="/" method="POST">
+    {%csrf_token%}
+    {{form.name}}
+    <br>
+    <br>
+    <button class="btn" type="submit" >ADD CITY</button>
+</form>
+    <br>
+    <br>
+</div>
+<div class="part2">
+{% for city_weather1 in weather_data %}
+<h3><span class="title">{{city_weather1.city}}</span></h3>
+<h3><span class="title2">{{city_weather1.temperature}}</span></h3>
+<h3><span class="title3">{{city_weather1.description}}</span></h3>
+{% endfor %}
+</div>
+</body>
+</html>
